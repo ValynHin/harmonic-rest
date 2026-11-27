@@ -153,7 +153,7 @@ img, svg { display: block; max-width: 100%; }
 .thanks__eyebrow { color: var(--clay-text); } /* .label: caps, like the form eyebrow */
 /* Same heading style as the form card title (.h2 + ink) */
 .thanks__title { margin: 0; color: var(--ink); }
-.thanks__text { font-size: 17px; color: var(--ink); }
+.thanks__text { font-size: 17px; color: var(--ink); text-wrap: pretty; } /* no single word on the last line */
 /* Download now: 24px above (card gap), 48px below to separate it from the share block */
 .thanks > .btn { margin-bottom: 24px; }
 .thanks__share { display: flex; flex-direction: column; align-items: center; gap: 14px; line-height: normal; }
