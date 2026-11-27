@@ -1,0 +1,18 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_1943_2527)">
+<circle cx="20" cy="20" r="15" stroke-width="1.07143" stroke-linecap="round" stroke-linejoin="round" stroke="#FFFDF8"/>
+<circle cx="20" cy="20.0001" r="7.49997" stroke-width="1.07143" stroke-linecap="round" stroke-linejoin="round" stroke="#FFFDF8"/>
+<circle cx="20" cy="20.0001" r="7.49997" stroke-width="1.07143" stroke-linecap="round" stroke-linejoin="round" stroke="#FFFDF8"/>
+<use xlink:href="#stroke0_1943_2527" fill="#FFFDF8"/>
+<mask id="stroke1_1943_2527" fill="white">
+<use xlink:href="#stroke0_1943_2527"/>
+</mask>
+<path d="M21.25 20.0001C21.25 20.6905 20.6904 21.2501 20 21.2501C19.3096 21.2501 18.75 20.6905 18.75 20.0001C18.75 19.3098 19.3096 18.7501 20 18.7501C20.6904 18.7501 21.25 19.3098 21.25 20.0001Z" stroke-width="0.25" stroke="#FFFDF8" mask="url(#stroke1_1943_2527)"/>
+</g>
+<defs>
+<clipPath id="clip0_1943_2527">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+<path id="stroke0_1943_2527" d="M20 21.2501C20.6904 21.2501 21.25 20.6905 21.25 20.0001C21.25 19.3098 20.6904 18.7501 20 18.7501C19.3096 18.7501 18.75 19.3098 18.75 20.0001C18.75 20.6905 19.3096 21.2501 20 21.2501Z"/>
+</defs>
+</svg>

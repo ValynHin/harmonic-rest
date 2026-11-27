@@ -1,0 +1,106 @@
+/* ==========================================================================
+   RESPONSIVE
+   Desktop (Figma 1440) is the base in the other files. Here:
+   - ≤1199  About becomes a fluid two-column row
+   - ≤1023  tablet: hero photo on top with the form card below it,
+            feature cards stacked
+   - ≤767   mobile: type and spacing from the Website "Homepage — Mobile"
+            (390): 20px sides, 60px section padding, H2 38/42, body 16/24,
+            56px header. One column everywhere.
+   ========================================================================== */
+
+/* ---------- ≤1199: About ---------- */
+@media (max-width: 1199px) {
+  .about__grid { height: auto; display: flex; align-items: flex-start; gap: 48px; }
+  .about__photo { position: relative; flex: 0 0 40%; width: auto; height: auto; aspect-ratio: 474 / 609; }
+  .about__text { position: static; flex: 1 1 0; width: auto; }
+}
+
+/* ---------- ≤1023: tablet ---------- */
+@media (max-width: 1023px) {
+  /* Hero: photo block on top, form card overlaps its bottom edge */
+  .hero { height: auto; min-height: 0; padding: 0 var(--page-pad) 80px; background: var(--cream); }
+  .hero__bg { position: relative; inset: auto; height: 560px; margin: 0 calc(-1 * var(--page-pad));
+    background-position: 72% top; }
+  .hero .signup-card,
+  .hero .signup-card.is-success { position: relative; left: auto; top: auto; transform: none; margin: -120px auto 0; }
+
+  .listen__cards { flex-direction: column; gap: 16px; }
+}
+
+/* ---------- ≤899: About stacks (two columns get too narrow for the 56px heading) ---------- */
+@media (max-width: 899px) {
+  .about__grid { flex-direction: column; gap: 40px; }
+  .about__photo { flex: none; width: 100%; max-width: 474px; }
+}
+
+/* ---------- ≤767: mobile ---------- */
+@media (max-width: 767px) {
+  :root { --page-pad: 20px; --section-pad-y: 60px; }
+
+  .h2 { font-size: 38px; line-height: 42px; }
+  .body { font-size: 16px; line-height: 24px; }
+
+  /* Nav */
+  .nav { height: 56px; padding: 8px var(--gutter); gap: 12px; }
+  .nav__logo { font-size: 20px; white-space: nowrap; }
+  .nav .btn { padding: 11px 16px; }
+
+  /* Hero + form card */
+  .hero { padding-bottom: 60px; }
+  .hero__bg { height: 400px; }
+  .hero .signup-card,
+  .hero .signup-card.is-success { margin-top: -180px; }
+  .signup-card { padding: 32px 20px; }
+  .signup-card__inner { gap: 28px; }
+  .signup-card__head { gap: 16px; }
+  .field__input { font-size: 16px; }
+
+  /* Thank-you card */
+  .thanks { gap: 20px; }
+  .thanks > .btn { margin-bottom: 16px; }
+  .thanks__share-row { flex-wrap: wrap; row-gap: 12px; }
+  .thanks__share-label { flex: 0 0 100%; margin-right: 0; } /* label on its own line, icons in one row below */
+
+  /* Listen + player */
+  .listen__inner > .btn { margin-top: 40px; }
+  .listen__stage { height: auto; padding: 48px 0; }
+  .player { flex-wrap: wrap; gap: 16px; padding: 20px; border-radius: 20px; }
+  .player__track { display: contents; }              /* title, waveform and time join the player row */
+  .player__btn { width: 56px; height: 56px; }
+  .player__icon--play { left: 20.4px; top: 17.6px; }  /* same optical offset as in the 72px button */
+  .player__icon--pause { left: 19px; top: 17px; }
+  .player__title { flex: 1 1 0; min-width: 0; white-space: normal; }
+  .player__name { font-size: 22px; line-height: 26px; }
+  .player__wave { flex: 0 0 100%; }
+  .player__bar { width: 1.5px; margin-left: -0.75px; }
+  .player__time { flex: 0 0 100%; margin-top: -4px; }
+
+  .listen__cards { gap: 12px; }
+
+  /* About (extra bottom room: the testimonial picture hangs up to 124px into this section) */
+  .about { padding-bottom: 140px; }
+  .about__grid { flex-direction: column; gap: 32px; }
+  .about__photo { flex: none; width: 100%; }
+  .about__text { gap: 16px; }
+  .about__body { gap: 32px; }
+  .about__copy { font-size: 16px; line-height: 24px; gap: 24px; }
+
+  /* Testimonial (top padding leaves room for the parallax picture) */
+  .testimonial { padding: 104px var(--gutter) 60px; }
+  .testimonial__inner { gap: 40px; }
+  .testimonial__quote-wrap { gap: 28px; }
+  .testimonial__slide { gap: 28px; }
+  .testimonial__quote { font-size: 28px; line-height: 36px; }
+  .parallax-pic { width: 100px; height: 136px; top: -84px; }
+
+  /* Footer */
+  .footer { padding-top: 28px; padding-bottom: 28px; }
+  .footer__bottom { flex-direction: column-reverse; gap: 16px; text-align: center; }
+  .footer__legal { flex-wrap: wrap; justify-content: center; gap: 16px 24px; }
+}
+
+/* ---------- ≤369: the header button no longer fits next to the logo, keep only the logo ---------- */
+@media (max-width: 369px) {
+  .nav .btn { display: none; }
+}

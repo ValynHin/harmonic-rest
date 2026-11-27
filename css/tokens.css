@@ -1,0 +1,67 @@
+/* ==========================================================================
+   TOKENS
+   Source: Katie Hailey design system v1 (katie-hailey-design-system-v1.html)
+   and the Harmonic Rest homepage in Figma (Yoga-16.07, node 1933:12067).
+   ========================================================================== */
+
+:root {
+  /* Colour */
+  --paper: #fbf7f0;
+  --cream: #fffdf8;
+  --warm-linen: #f4e9da;
+  --ink: #25322f;
+  --muted: #61716a;
+  --deep-sage: #465a4c;
+  --sage: #758b76;
+  --moss: #dfe8dc;
+  --powder-petal: #e8d2c8;
+  --clay: #b87862;
+  --clay-text: #9a5f4e;
+  --clay-text-hover: #b87862; /* Figma DS: Solid button, hover = Clay */
+  --dark-forest: #26342f;
+
+  --line: rgba(37, 50, 47, 0.14);
+  --line-strong: rgba(37, 50, 47, 0.24);
+
+  /* Interaction */
+  --focus-ring-clay: 0 0 0 3px rgba(154, 95, 78, 0.38); /* DS: button focus */
+  --focus-ring-field: 0 0 0 3px rgba(70, 90, 76, 0.16); /* DS: input focus */
+  --disabled-bg: rgba(154, 95, 78, 0.38);
+  --disabled-fg: rgba(255, 253, 248, 0.8);
+
+  /* Elevation */
+  --shadow-soft: 0 18px 50px rgba(42, 52, 47, 0.08);
+  --shadow-panel: 0 24px 70px rgba(42, 52, 47, 0.1);
+  --shadow-player: 0 24px 60px rgba(13, 20, 18, 0.35);
+
+  /* Type */
+  --font-heading: "Newsreader", Georgia, serif;
+  --font-body: "DM Sans", Arial, sans-serif;
+
+  /* Radius (Figma homepage uses 6px on cards and fields, pills on buttons) */
+  --radius-card: 6px;
+  --radius-pill: 999px;
+
+  /* Spacing (DS scale) */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Layout */
+  --page-pad: 60px;
+  --content-w: 1320px; /* Website DS: content in a max-width 1440px container (1320 + 2 x 60) */
+  /* Side padding that keeps content inside that container while backgrounds go full-bleed.
+     % resolves against the element's containing block, i.e. the full-width section. */
+  --gutter: max(var(--page-pad), calc((100% - var(--content-w)) / 2));
+  --section-pad-y: 100px;
+
+  /* Motion (DS: colour 200ms ease, hover transforms 250ms, reveals 300ms ease-out) */
+  --t-color: 200ms ease;
+  --t-transform: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --t-reveal: 300ms ease-out;
+}

@@ -1,0 +1,132 @@
+/* ==========================================================================
+   SECTIONS (page layout). Backgrounds are full-bleed; content sits in the 1440px container via --gutter.
+   Each block is independent: Nav, Hero, Listen (module 2), About,
+   Testimonial, Signup, Footer. Player styles live in player.css.
+   ========================================================================== */
+
+.page { width: 100%; position: relative; overflow-x: clip; }
+
+/* ---- Nav ---- */
+.nav {
+  position: relative; z-index: 5;
+  height: 64px; padding: 12px var(--gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  background: var(--cream);
+}
+.nav__logo {
+  font-family: var(--font-heading); font-size: 24px; line-height: normal; /* Figma 28px, reduced on request */
+  color: var(--deep-sage);
+}
+
+/* ---- Hero ---- */
+.hero {
+  /* Fills the screen below the 64px nav; never shorter than the form card + 40px top and bottom */
+  position: relative; height: calc(100vh - 64px); height: calc(100svh - 64px); min-height: 848px; overflow: hidden;
+  background: linear-gradient(135deg, var(--moss) 0%, var(--powder-petal) 100%);
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  background: var(--img-hero) center top / cover no-repeat; /* top-anchored so Katie's head is never cropped */
+}
+/* Form card (and the thank-you card) centred vertically, as in Figma (80px top / 90px bottom at 938) */
+.hero .signup-card { position: absolute; left: var(--gutter); top: 50%; transform: translateY(-50%); }
+
+/* ---- Image slot (shared) ---- */
+.img-slot { position: relative; overflow: hidden; border-radius: var(--radius-card);
+  background: linear-gradient(160deg, var(--moss), var(--powder-petal)); }
+.img-slot > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---- Listen (Module 2) ---- */
+.listen {
+  position: relative; overflow: hidden;
+  padding: var(--section-pad-y) var(--gutter);
+  background: var(--deep-sage);
+  display: flex; flex-direction: column; align-items: center;
+}
+/* Waves live inside the stage, full viewport width, centred on the player
+   (desktop: 94.5px below the section top, as in Figma). */
+.listen__waves {
+  position: absolute; left: 50%; top: calc(50% - 414px); width: 100vw; height: 788px;
+  transform: translateX(-50%); pointer-events: none; z-index: 0;
+}
+.listen__head, .listen__stage .player, .listen__cards, .listen__inner > .btn { position: relative; z-index: 1; }
+.listen__waves canvas { display: block; width: 100%; height: 100%; }
+.listen__inner { position: relative; width: var(--content-w); max-width: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 0; }
+/* Figma: head, stage and cards stack with no gap; the CTA sits 60px below the cards */
+.listen__inner > .btn { margin-top: 60px; }
+.listen__head { width: 760px; max-width: 100%; display: flex; flex-direction: column; gap: 24px; align-items: center; text-align: center; }
+.listen__eyebrow { color: var(--moss); }
+.listen__title { color: var(--cream); }
+.listen__lead { color: var(--moss); }
+.listen__stage { position: relative; box-sizing: border-box; width: 100%; height: 405px; padding-top: 100px; display: flex; justify-content: center; align-items: flex-start; }
+.listen__cards { display: flex; gap: 20px; width: 100%; }
+
+/* ---- About ---- */
+.about { background: var(--paper); padding: var(--section-pad-y) var(--gutter); }
+.about__grid { position: relative; width: var(--content-w); max-width: 100%; height: 608px; }
+.about__photo { position: absolute; left: 0; top: 0; width: 474px; height: 609px; background-image: var(--img-katie), linear-gradient(160deg, var(--powder-petal), var(--moss)); background-size: cover; background-position: center; }
+.about__text { position: absolute; left: 670px; top: 0; width: 650px; display: flex; flex-direction: column; gap: 24px; }
+.about__eyebrow { color: var(--muted); }
+.about__body { display: flex; flex-direction: column; gap: 40px; }
+.about__copy { display: flex; flex-direction: column; gap: 26px; font-size: 18px; line-height: 26px; color: var(--ink); }
+.about__sign { display: flex; flex-direction: column; gap: 4px; }
+.about__name { font-size: 18px; line-height: 26px; color: var(--ink); }
+.about__role { font-weight: 500; font-size: 16px; line-height: 24px; color: var(--muted); }
+
+/* ---- Testimonial ---- */
+.testimonial {
+  position: relative; background: var(--moss);
+  padding: 120px var(--gutter) 100px;
+  display: flex; justify-content: center;
+}
+.testimonial__inner { width: 1009px; max-width: 100%; display: flex; flex-direction: column; align-items: center; gap: 68px; }
+.testimonial__quote-wrap { display: flex; flex-direction: column; align-items: center; gap: 40px; width: 100%; }
+.testimonial__eyebrow { color: var(--muted); }
+.testimonial__slides { width: 100%; display: grid; }
+.testimonial__slide { grid-area: 1 / 1; display: flex; flex-direction: column; gap: 40px; opacity: 0; visibility: hidden; transition: opacity var(--t-reveal), visibility 0s linear var(--t-reveal); }
+.testimonial__slide.is-active { opacity: 1; visibility: visible; transition-delay: 0s; }
+.testimonial__quote { font-family: var(--font-heading); font-weight: 300; font-size: 42px; line-height: 50px; text-align: center; color: var(--deep-sage); }
+.testimonial__author { text-align: center; color: var(--muted); }
+
+.pager {
+  position: relative; display: inline-flex; width: 116px; height: 38px;
+  align-items: center; justify-content: center;
+  border: 1px solid var(--deep-sage); border-radius: var(--radius-pill);
+  transition: background-color var(--t-color);
+}
+.pager__arrows { width: 48px; height: 12px; pointer-events: none; }
+.pager__btn { position: absolute; top: 0; bottom: 0; width: 50%; background: none; border: 0; padding: 0; cursor: pointer; }
+.pager__btn--prev { left: 0; border-radius: 999px 0 0 999px; }
+.pager__btn--next { right: 0; border-radius: 0 999px 999px 0; }
+.pager__btn:hover { background: rgba(70,90,76,.1); }
+.pager__btn:focus-visible { outline: 3px solid rgba(70,90,76,.45); outline-offset: -3px; }
+.pager__btn:disabled { cursor: not-allowed; opacity: .4; background: none; }
+
+/* Parallax picture (anchored on the About/Testimonial boundary) */
+.parallax-pic { position: absolute; right: var(--gutter); top: -116px; /* Figma -76px minus the 40px parallax start offset */ width: 160px; height: 217px; z-index: 2; will-change: transform; }
+.parallax-pic .img-slot { width: 100%; height: 100%; background-image: var(--img-lake), linear-gradient(160deg, var(--sage), var(--deep-sage)); background-size: cover; background-position: center; }
+
+/* ---- Signup (bottom) ---- */
+.signup { position: relative; overflow: hidden; padding: var(--section-pad-y) var(--gutter); display: flex; justify-content: center;
+  background: linear-gradient(180deg, var(--deep-sage), var(--dark-forest)); }
+/* Photo layer is 110px taller on each side so the ±100px parallax never shows an edge */
+.signup__bg { position: absolute; left: 0; right: 0; top: -110px; bottom: -110px;
+  background: var(--img-form-bg) center / cover no-repeat; will-change: transform; pointer-events: none; }
+.signup .signup-card { position: relative; z-index: 1; }
+.signup { align-items: center; } /* centres the shorter thank-you card */
+
+/* ---- Footer ---- */
+.footer { background: var(--dark-forest); padding: 28px var(--gutter); }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; }
+.footer__small { font-size: 13px; line-height: normal; color: var(--moss); opacity: .55; }
+.footer__legal { display: flex; gap: 24px; align-items: center; }
+.footer__link { font-size: 13px; color: var(--moss); opacity: .55; transition: opacity var(--t-color); }
+.footer__link:hover { opacity: 1; }
+.footer__link:focus-visible { opacity: 1; outline: 2px solid var(--moss); outline-offset: 4px; border-radius: 2px; }
+.footer__social { display: flex; gap: 14px; }
+.social { width: 24px; height: 24px; opacity: .55; transition: opacity var(--t-color), transform var(--t-transform); }
+.social:hover { opacity: 1; transform: translateY(-2px); }
+.social:focus-visible { opacity: 1; outline: 2px solid var(--moss); outline-offset: 4px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) { .social:hover { transform: none; } }

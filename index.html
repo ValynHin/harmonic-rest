@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harmonic Rest — Your free 3-Minute Reset</title>
+<meta name="description" content="A complete, original three-minute sound experience for moments when you need a little space.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Newsreader:opsz,wght@6..72,300;6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css?v=202611270748">
+<link rel="stylesheet" href="css/images.css?v=202611270748">
+<link rel="stylesheet" href="css/components.css?v=202611270748">
+<link rel="stylesheet" href="css/player.css?v=202611270748">
+<link rel="stylesheet" href="css/sections.css?v=202611270748">
+<link rel="stylesheet" href="css/responsive.css?v=202611270748">
+</head>
+<body>
+<div class="page">
+
+<!-- =====================================================================
+     BLOCK: NAV
+     ===================================================================== -->
+<header class="nav">
+  <p class="nav__logo">Harmonic Rest</p>
+  <a class="btn btn--primary" href="#signup">Get the free reset</a>
+</header>
+
+<main id="top">
+
+<!-- =====================================================================
+     BLOCK: HERO + SIGNUP CARD
+     The same card markup is reused in the bottom section (#signup).
+     Photo: set --img-hero in css/images.css
+     ===================================================================== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" role="img" aria-label=""></div>
+
+  <div class="signup-card" data-signup>
+    <div class="signup-card__inner">
+      <div class="signup-card__head">
+        <p class="label signup-card__eyebrow">Your free 3-Minute Reset</p>
+        <h1 class="h2 signup-card__title" id="hero-title">When your mind won’t slow down, let sound lead the way.</h1>
+        <p class="body signup-card__lead">A complete, original three-minute sound experience for moments when you need a little space.</p>
+      </div>
+      <form class="signup-form" novalidate data-signup-form>
+        <div class="signup-form__fields">
+          <div class="field" data-field>
+            <label class="field__label" for="hero-name">First name <span class="field__req" aria-hidden="true">*</span></label>
+            <input class="field__input" id="hero-name" name="firstName" type="text" placeholder="Type your name" autocomplete="given-name" required>
+            <p class="field__help" role="alert">Please enter your first name.</p>
+          </div>
+          <div class="field" data-field>
+            <label class="field__label" for="hero-email">Email address <span class="field__req" aria-hidden="true">*</span></label>
+            <input class="field__input" id="hero-email" name="email" type="email" placeholder="Type your email" autocomplete="email" required>
+            <p class="field__help" role="alert">Please enter a valid email address.</p>
+          </div>
+          <label class="check">
+            <input class="check__input" type="checkbox" name="marketingOptIn">
+            <span class="check__box" aria-hidden="true"></span>
+            <span class="check__text">Send me occasional updates from Harmonic Rest (optional)</span>
+          </label>
+        </div>
+        <button class="btn btn--primary btn--block" type="submit">Get my free 3-minute reset</button>
+        <p class="body-sm signup-form__note">Listen instantly · We’ll email you the link too</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BLOCK: LISTEN (module 2): waves canvas + audio player + feature cards
+     JS: js/waves.js (+ js/waves-data.js), js/player.js
+     ===================================================================== -->
+<section class="listen" aria-labelledby="listen-title">
+
+  <div class="listen__inner">
+    <div class="listen__head">
+      <p class="label listen__eyebrow">What you’ll receive</p>
+      <h2 class="h2 listen__title" id="listen-title">Three minutes, just for you.</h2>
+      <p class="body listen__lead">The Three-Minute Reset follows a gentle descent of tones, thoughtfully arranged into a complete listening experience. Find a comfortable spot and give yourself a few minutes away from the day’s noise.</p>
+    </div>
+
+    <div class="listen__stage">
+      <!-- MODULE: waves (single full-width canvas, centred on the player) -->
+      <div class="listen__waves" aria-hidden="true"><canvas data-waves width="1440" height="788"></canvas></div>
+      <!-- MODULE: audio player. Copy this block + css/player.css + js/player.js -->
+      <div class="player" data-player data-src="assets/audio/three-minute-reset-sample.m4a" data-duration="60">
+        <button class="player__btn" type="button" data-player-toggle aria-label="Play sample">
+          <img class="player__icon player__icon--play" src="assets/icons/play.svg" alt="">
+          <span class="player__icon player__icon--pause" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <div class="player__track">
+          <div class="player__title">
+            <p class="player__name">The Three-Minute Reset</p>
+            <p class="player__sub">Listen to a 1-minute sample</p>
+          </div>
+          <div class="player__wave" data-player-wave role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0" aria-valuetext="0:00 of 1:00">
+            <!-- bars are generated by player.js from data-bars -->
+            <div class="player__playhead" data-player-playhead></div>
+          </div>
+          <div class="player__time"><span data-player-current>0:00</span><span data-player-total>1:00</span></div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="listen__cards" style="list-style:none;margin:0;padding:0">
+      <li class="feature-card">
+        <div class="feature-card__icon"><img src="assets/icons/focus.svg" width="40" height="40" alt=""></div>
+        <div class="feature-card__body">
+          <h3 class="h4 feature-card__title">Something gentle to follow</h3>
+          <p class="body-sm feature-card__text">Let the changing tones become your focus, without needing to empty your mind.</p>
+        </div>
+      </li>
+      <li class="feature-card">
+        <div class="feature-card__icon"><img src="assets/icons/no-experience.svg" width="40" height="40" alt=""></div>
+        <div class="feature-card__body">
+          <h3 class="h4 feature-card__title">No practice required</h3>
+          <p class="body-sm feature-card__text">No meditation experience or breathing technique to master. Just listen however feels comfortable.</p>
+        </div>
+      </li>
+      <li class="feature-card">
+        <div class="feature-card__icon"><img src="assets/icons/yin-yang.svg" width="40" height="40" alt=""></div>
+        <div class="feature-card__body">
+          <h3 class="h4 feature-card__title">A pause that fits real life</h3>
+          <p class="body-sm feature-card__text">Between tasks or after a long day — come back to it whenever you like.</p>
+        </div>
+      </li>
+    </ul>
+
+    <a class="btn btn--primary" href="#signup">Get my free 3-minute reset</a>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BLOCK: ABOUT KATIE
+     Photo: set --img-katie in css/images.css (474 x 609)
+     ===================================================================== -->
+<section class="about" aria-labelledby="about-title">
+  <div class="about__grid">
+    <div class="about__photo img-slot" role="img" aria-label="Katie playing a singing bowl"></div>
+    <div class="about__text">
+      <p class="label about__eyebrow">Meet Katie</p>
+      <h2 class="h2" id="about-title">Why I wanted to bring sound into everyday life.</h2>
+      <div class="about__body">
+        <div class="about__copy">
+          <p>Hi, I’m Katie. I’ve been teaching yoga for over ten years, and my work has grown to include meditation, sound baths and retreats. Through these experiences, I’ve seen how simply taking time to listen can create a welcome pause in a busy day.</p>
+          <p>Harmonic Rest grew from a simple wish: to bring that invitation to slow down beyond the studio and into everyday life, through original sound experiences you can enjoy wherever you are.</p>
+          <p>The Three-Minute Reset is a little place to begin. No preparation or expectations — just a few minutes to listen and notice how it feels for you.</p>
+        </div>
+        <div class="about__sign">
+          <p class="about__name">Katie Hailey</p>
+          <p class="about__role">Yoga Teacher · Sound Practitioner</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BLOCK: TESTIMONIAL (+ parallax picture)
+     JS: js/testimonial.js, js/parallax.js
+     Parallax picture: set --img-lake in css/images.css (160 x 217)
+     ===================================================================== -->
+<section class="testimonial" aria-roledescription="carousel" aria-label="Listener testimonials" data-testimonial>
+  <!-- MODULE: parallax picture. data-parallax-speed: 0.08 = light drift up while you scroll down -->
+  <div class="parallax-pic" data-parallax data-parallax-speed="0.08" aria-hidden="true"><div class="img-slot"></div></div>
+
+  <div class="testimonial__inner">
+    <div class="testimonial__quote-wrap">
+      <p class="label testimonial__eyebrow">From our listeners</p>
+      <div class="testimonial__slides" aria-live="polite">
+        <figure class="testimonial__slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 1">
+          <blockquote class="testimonial__quote">“Katie’s sound healing classes are a deeply relaxing and immersive experience, cutting through and releasing the accumulation of daily stressors.”</blockquote>
+          <figcaption class="label testimonial__author">— Laura Cox</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="pager">
+      <img class="pager__arrows" src="assets/icons/arrows.svg" alt="">
+      <button class="pager__btn pager__btn--prev" type="button" data-prev aria-label="Previous testimonial"></button>
+      <button class="pager__btn pager__btn--next" type="button" data-next aria-label="Next testimonial"></button>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     BLOCK: SIGNUP (bottom). Background: set --img-form-bg in css/images.css
+     ===================================================================== -->
+<section class="signup" id="signup" aria-labelledby="signup-title">
+  <!-- Background photo with light parallax (moves slower than the page). Photo: --img-form-bg -->
+  <div class="signup__bg" data-parallax data-parallax-speed="-0.22" data-parallax-max="100" aria-hidden="true"></div>
+  <div class="signup-card" data-signup>
+    <div class="signup-card__inner">
+      <div class="signup-card__head">
+        <p class="label signup-card__eyebrow">Your free 3-Minute Reset</p>
+        <h2 class="h2 signup-card__title" id="signup-title">When your mind won’t slow down, let sound lead the way.</h2>
+        <p class="body signup-card__lead">A complete, original three-minute sound experience for moments when you need a little space.</p>
+      </div>
+      <form class="signup-form" novalidate data-signup-form>
+        <div class="signup-form__fields">
+          <div class="field" data-field>
+            <label class="field__label" for="bot-name">First name <span class="field__req" aria-hidden="true">*</span></label>
+            <input class="field__input" id="bot-name" name="firstName" type="text" placeholder="Type your name" autocomplete="given-name" required>
+            <p class="field__help" role="alert">Please enter your first name.</p>
+          </div>
+          <div class="field" data-field>
+            <label class="field__label" for="bot-email">Email address <span class="field__req" aria-hidden="true">*</span></label>
+            <input class="field__input" id="bot-email" name="email" type="email" placeholder="Type your email" autocomplete="email" required>
+            <p class="field__help" role="alert">Please enter a valid email address.</p>
+          </div>
+          <label class="check">
+            <input class="check__input" type="checkbox" name="marketingOptIn">
+            <span class="check__box" aria-hidden="true"></span>
+            <span class="check__text">Send me occasional updates from Harmonic Rest (optional)</span>
+          </label>
+        </div>
+        <button class="btn btn--primary btn--block" type="submit">Get my free 3-minute reset</button>
+        <p class="body-sm signup-form__note">Listen instantly · We’ll email you the link too</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =====================================================================
+     BLOCK: FOOTER
+     ===================================================================== -->
+<footer class="footer">
+  <div class="footer__bottom">
+    <p class="footer__small">© 2026 Katie Hailey · Harmonic Rest</p>
+    <div class="footer__legal">
+      <a class="footer__link" href="#">Privacy policy</a>
+      <a class="footer__link" href="#">Terms</a>
+      <div class="footer__social">
+        <a class="social" href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" width="24" height="24" alt=""></a>
+        <a class="social" href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" width="24" height="24" alt=""></a>
+        <a class="social" href="#" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" width="24" height="24" alt=""></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<!-- =====================================================================
+     TEMPLATE: thank-you state (Figma "Form — success state (with share)", 1702:636)
+     js/form.js clones it into a signup card after a successful submit.
+     ===================================================================== -->
+<template id="signup-thanks">
+  <div class="thanks" tabindex="-1">
+    <div class="thanks__message">
+      <p class="label thanks__eyebrow">You’re in</p>
+      <h2 class="h2 thanks__title">Your 3-Minute Reset is ready.</h2>
+      <p class="thanks__text">Press play whenever you’re ready. We’ve also sent the link to your inbox, so you can come back to it any time.</p>
+    </div>
+    <!-- Points to the sample for now; swap href for the full 3-Minute Reset file -->
+    <a class="btn btn--primary" href="assets/audio/three-minute-reset-sample.m4a" download="Harmonic-Rest-3-Minute-Reset.m4a">Download now</a>
+    <div class="thanks__share">
+      <p class="thanks__share-title">Know someone who needs a pause?</p>
+      <div class="thanks__share-row">
+        <p class="thanks__share-label">Share it with them:</p>
+        <a class="share-btn" data-share="whatsapp" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="WhatsApp"><path id="Vector" d="M15.9998 3.33333C13.7696 3.3329 11.5788 3.92131 9.64896 5.03908C7.71908 6.15684 6.11853 7.76433 5.00912 9.69903C3.89971 11.6337 3.32078 13.827 3.33086 16.0572C3.34093 18.2874 3.93966 20.4754 5.0665 22.4L3.4665 28.5333L9.73317 26.9333C11.4176 27.9184 13.3068 28.5011 15.2534 28.6358C17.2001 28.7705 19.1516 28.4536 20.9556 27.7099C22.7596 26.9662 24.3674 25.8158 25.6536 24.3483C26.9398 22.8809 27.8695 21.1361 28.3703 19.2502C28.8711 17.3642 28.9294 15.388 28.5406 13.4758C28.1519 11.5636 27.3266 9.76711 26.1292 8.2264C24.9317 6.68569 23.3945 5.44246 21.6375 4.5937C19.8804 3.74494 17.951 3.3136 15.9998 3.33333Z" fill="currentColor"/><path id="Vector_2" d="M12.2668 9.86665C12.6668 9.73332 13.0668 9.86665 13.2001 10.2667L14.2668 12.6667C14.4001 13.0667 14.2668 13.4667 14.0001 13.7333L13.2001 14.5333C14.1335 16.4 15.6001 17.8667 17.4668 18.8L18.2668 18C18.5335 17.7333 18.9335 17.6 19.3335 17.7333L21.7335 18.8C22.1335 18.9333 22.2668 19.3333 22.1335 19.7333L21.7335 21.2C21.6001 21.7333 21.0668 22.1333 20.4001 22.1333C14.9335 21.7333 10.5335 17.3333 10.1335 11.8666C10.1335 11.2 10.5335 10.6667 11.0668 10.5333L12.2668 9.86665Z" fill="#FBF7F0"/></g></svg></a>
+        <a class="share-btn" data-share="email" href="#" aria-label="Share by email"><svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Email"><path id="Vector" d="M16 29.3333C23.3638 29.3333 29.3333 23.3638 29.3333 16C29.3333 8.6362 23.3638 2.66667 16 2.66667C8.6362 2.66667 2.66667 8.6362 2.66667 16C2.66667 23.3638 8.6362 29.3333 16 29.3333Z" fill="currentColor"/><g id="Group"><path id="Vector_2" d="M9.81359 9.81331H22.1869C23.0411 9.81331 23.7336 10.5058 23.7336 11.36V20.64C23.7336 21.4942 23.0411 22.1866 22.1869 22.1866H9.81359C8.95939 22.1866 8.26693 21.4942 8.26693 20.64V11.36C8.26693 10.5058 8.95939 9.81331 9.81359 9.81331Z" stroke-width="1.86667" stroke-linecap="round" stroke-linejoin="round" stroke="#FBF7F0"/><path id="Vector_3" d="M23.7334 12.1333L16.7966 16.5413C16.5579 16.6909 16.2818 16.7702 16.0001 16.7702C15.7184 16.7702 15.4423 16.6909 15.2036 16.5413L8.26676 12.1333" stroke-width="1.86667" stroke-linecap="round" stroke-linejoin="round" stroke="#FBF7F0"/></g></g></svg></a>
+        <button class="share-btn" data-share="copy" type="button" aria-label="Copy link"><svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Copy link"><path id="Vector" d="M16 29.3333C23.3638 29.3333 29.3333 23.3638 29.3333 16C29.3333 8.6362 23.3638 2.66667 16 2.66667C8.6362 2.66667 2.66667 8.6362 2.66667 16C2.66667 23.3638 8.6362 29.3333 16 29.3333Z" fill="currentColor"/><g id="Group"><path id="Vector_2" d="M14.4538 16.7733C14.7859 17.2173 15.2096 17.5847 15.6962 17.8505C16.1828 18.1164 16.7208 18.2745 17.2739 18.3141C17.8269 18.3537 18.382 18.2739 18.9015 18.0801C19.421 17.8863 19.8927 17.5831 20.2847 17.1909L22.6047 14.8709C23.3091 14.1417 23.6988 13.1649 23.69 12.1511C23.6812 11.1373 23.2745 10.1675 22.5576 9.45057C21.8407 8.73365 20.8709 8.327 19.8571 8.31819C18.8432 8.30938 17.8665 8.69912 17.1372 9.40346L15.8071 10.7259" stroke-width="1.86667" stroke-linecap="round" stroke-linejoin="round" stroke="#FBF7F0"/><path id="Vector_3" d="M17.5469 15.2267C17.2148 14.7827 16.7911 14.4153 16.3045 14.1494C15.8179 13.8836 15.2799 13.7255 14.7268 13.6859C14.1738 13.6463 13.6187 13.7261 13.0992 13.9199C12.5797 14.1137 12.108 14.4169 11.716 14.8091L9.39597 17.1291C8.69162 17.8583 8.30188 18.835 8.31069 19.8489C8.3195 20.8627 8.72616 21.8325 9.44307 22.5494C10.16 23.2663 11.1298 23.673 12.1436 23.6818C13.1574 23.6906 14.1342 23.3009 14.8634 22.5965L16.1858 21.2741" stroke-width="1.86667" stroke-linecap="round" stroke-linejoin="round" stroke="#FBF7F0"/></g></g></svg></button>
+        <a class="share-btn" data-share="facebook" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Facebook"><path id="vector" d="M29.3333 16.0809C29.3333 8.672 23.3644 2.66667 16 2.66667C8.63556 2.66667 2.66667 8.672 2.66667 16.0809C2.66667 22.7778 7.54133 28.3271 13.9164 29.3333V19.9591H10.5316V16.08H13.9164V13.1253C13.9164 9.76356 15.9067 7.90578 18.9529 7.90578C20.4107 7.90578 21.9378 8.168 21.9378 8.168V11.4693H20.2551C18.5991 11.4693 18.0836 12.504 18.0836 13.5653V16.0809H21.7813L21.1902 19.9582H18.0836V29.3333C24.4587 28.3271 29.3333 22.7778 29.3333 16.0809Z" fill="currentColor"/></g></svg></a>
+        <span class="thanks__copied" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script src="js/waves-data.js?v=202611270748"></script>
+<script src="js/waves.js?v=202611270748"></script>
+<script>window.HR_PLAYER_BARS = [9, 9, 10, 11, 12, 14, 17, 19, 22, 24, 26, 27, 28, 28, 28, 29, 30, 32, 34, 37, 39, 41, 43, 44, 46, 47, 48, 48, 44, 37, 26, 16, 11, 10, 10, 11, 13, 15, 18, 20, 23, 25, 27, 28, 28, 28, 28, 29, 31, 33, 35, 38, 40, 42, 44, 45, 46, 47, 48, 46, 41, 32, 21, 13, 10, 10, 11, 12, 14, 17, 19, 22, 24, 26, 27, 28, 28, 28, 29, 30, 32, 34, 37, 39, 41, 43, 44, 46, 47, 48, 48, 44, 37, 27, 16, 11, 10, 10, 11, 13, 15, 18, 20, 23, 25, 27, 28, 28, 28, 28, 29, 31, 33, 35, 38, 40, 42, 44, 45, 46, 47, 48, 46, 41, 31, 19, 12, 10, 10, 10, 10, 11, 11, 11, 10];</script>
+<script src="js/player.js?v=202611270748"></script>
+<script src="js/parallax.js?v=202611270748"></script>
+<script src="js/form.js?v=202611270748"></script>
+<script src="js/testimonial.js?v=202611270748"></script>
+</body>
+</html>
