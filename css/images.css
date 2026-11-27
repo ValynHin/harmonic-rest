@@ -2,12 +2,12 @@
    IMAGE SLOTS
    Photos live in assets/img. Each slot shows a palette gradient until you point
    the variable at a file. Example:
-     --img-hero: url("../assets/img/hero.jpg?v=202611270919");
+     --img-hero: url("../assets/img/hero.jpg?v=202611270928");
    ========================================================================== */
 
 :root {
-  --img-hero: url("../assets/img/hero.jpg?v=202611270919");        /* Hero background, 1440 x 938, subject on the right */
-  --img-katie: url("../assets/img/katie.jpg?v=202611270919");       /* About photo, 474 x 609 (portrait) */
-  --img-lake: url("../assets/img/lake.jpg?v=202611270919");        /* Small photo between About and Testimonial, 160 x 217 */
-  --img-form-bg: url("../assets/img/form-bg.jpg?v=202611270919");     /* Bottom form section background, 1440 x ~1000 */
+  --img-hero: url("../assets/img/hero.jpg?v=202611270928");        /* Hero background, 1440 x 938, subject on the right */
+  --img-katie: url("../assets/img/katie.jpg?v=202611270928");       /* About photo, 474 x 609 (portrait) */
+  --img-lake: url("../assets/img/lake.jpg?v=202611270928");        /* Small photo between About and Testimonial, 160 x 217 */
+  --img-form-bg: url("../assets/img/form-bg.jpg?v=202611270928");     /* Bottom form section background, 1440 x ~1000 */
 }
