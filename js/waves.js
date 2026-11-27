@@ -43,7 +43,20 @@
   /* --- geometry --- */
   var N = D.lines[0].ys.length;
   // curve y in canvas coords = vy + ys[i] + frameTop (verified against the Figma render)
-  function lineY(l, i) { return l.vy + l.ys[i] + D.frameTop; }
+  function figmaY(l, i) { return l.vy + l.ys[i] + D.frameTop; }
+
+  // Vertical spread knob: 1 = exact Figma curves. Values above 1 open the strands
+  // further apart around the bundle's centre line at every x (shape is kept).
+  var SPREAD = 1;
+  var L = D.lines.length;
+  D.lines.forEach(function (l) { l.fy = new Array(N); });
+  for (var i = 0; i < N; i++) {
+    var m = 0;
+    D.lines.forEach(function (l) { m += figmaY(l, i); });
+    m /= L;
+    D.lines.forEach(function (l) { l.fy[i] = m + (figmaY(l, i) - m) * SPREAD; });
+  }
+  function lineY(l, i) { return l.fy[i]; }
   D.lines.forEach(function (l) {
     var lo = Infinity, hi = -Infinity;
     for (var i = 0; i < N; i++) { var y = lineY(l, i); lo = Math.min(lo, y); hi = Math.max(hi, y); }
@@ -81,6 +94,9 @@
   var gctx = glintLayer.getContext("2d");
 
   function resize() {
+    // match the visible page width (100vw would also include the scrollbar and
+    // hide the right-hand fade under it)
+    canvas.parentElement.style.width = document.documentElement.clientWidth + "px";
     W = canvas.clientWidth || D.W;
     sx = Math.max(1, W / D.W);
     ox = (W - D.W * sx) / 2;
@@ -153,7 +169,7 @@
   window.addEventListener("resize", function () {
     cancelAnimationFrame(resizeRaf);
     resizeRaf = requestAnimationFrame(function () {
-      if (canvas.clientWidth === W) return;
+      if (document.documentElement.clientWidth === W) return;
       resize();
       draw(reduce ? D.durationMs * 0.4 : offset);
     });

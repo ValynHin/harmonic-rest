@@ -9,6 +9,16 @@
             56px header. One column everywhere.
    ========================================================================== */
 
+/* ---------- ≤1439: waves ----------
+   Below 1440 the wave artwork keeps its size and is cropped at the sides, which
+   also crops its own edge fade. Fade the lines out at the screen edges instead. */
+@media (max-width: 1439px) {
+  .listen__waves {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%);
+  }
+}
+
 /* ---------- ≤1199: About ---------- */
 @media (max-width: 1199px) {
   .about__grid { height: auto; display: flex; align-items: flex-start; gap: 48px; }

@@ -25,7 +25,8 @@
   background: linear-gradient(135deg, var(--moss) 0%, var(--powder-petal) 100%);
 }
 .hero__bg {
-  position: absolute; inset: 0;
+  /* 280px taller than the hero: room for the scroll parallax (max 260px down) */
+  position: absolute; top: 0; left: 0; right: 0; bottom: -280px; will-change: transform;
   background: var(--img-hero) center top / cover no-repeat; /* top-anchored so Katie's head is never cropped */
 }
 /* Form card (and the thank-you card) centred vertically, as in Figma (80px top / 90px bottom at 938) */
