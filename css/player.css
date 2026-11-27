@@ -35,6 +35,8 @@
 .player__track { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
 .player__title { display: flex; flex-direction: column; gap: 4px; white-space: nowrap; }
 .player__name { font-family: var(--font-heading); font-size: 24px; line-height: 24px; color: var(--cream); }
+/* file type next to the title, quieter than the name */
+.player__ext { margin-left: 2px; color: var(--moss); opacity: .6; }
 .player__sub { font-size: 14px; line-height: 18px; color: var(--moss); opacity: .6; }
 
 .player__wave {
