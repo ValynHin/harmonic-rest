@@ -11,11 +11,11 @@
 
 /* ---------- ≤1439: waves ----------
    Below 1440 the wave artwork keeps its size and is cropped at the sides, which
-   also crops its own edge fade. Fade the lines out at the screen edges instead. */
+   also crops its own edge fade. Fade the lines out at the screen edges instead (right side a bit further in). */
 @media (max-width: 1439px) {
   .listen__waves {
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 80%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 15%, #000 80%, transparent 100%);
   }
 }
 

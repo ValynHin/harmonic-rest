@@ -49,6 +49,9 @@
 .listen__waves {
   position: absolute; left: 50%; top: calc(50% - 414px); width: 100vw; height: 788px;
   transform: translateX(-50%); pointer-events: none; z-index: 0;
+  /* the right side fades a little further in than the left (requested) */
+  -webkit-mask-image: linear-gradient(to right, #000 0, #000 80%, transparent 100%);
+          mask-image: linear-gradient(to right, #000 0, #000 80%, transparent 100%);
 }
 .listen__head, .listen__stage .player, .listen__cards, .listen__inner > .btn { position: relative; z-index: 1; }
 .listen__waves canvas { display: block; width: 100%; height: 100%; }

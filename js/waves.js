@@ -45,17 +45,11 @@
   // curve y in canvas coords = vy + ys[i] + frameTop (verified against the Figma render)
   function figmaY(l, i) { return l.vy + l.ys[i] + D.frameTop; }
 
-  // Vertical spread knob: 1 = exact Figma curves. Values above 1 open the strands
-  // further apart around the bundle's centre line at every x (shape is kept).
-  var SPREAD = 1;
-  var L = D.lines.length;
-  D.lines.forEach(function (l) { l.fy = new Array(N); });
-  for (var i = 0; i < N; i++) {
-    var m = 0;
-    D.lines.forEach(function (l) { m += figmaY(l, i); });
-    m /= L;
-    D.lines.forEach(function (l) { l.fy[i] = m + (figmaY(l, i) - m) * SPREAD; });
-  }
+  // Strand curves are exactly Figma's (fan / untwist experiments were rejected).
+  D.lines.forEach(function (l) {
+    l.fy = new Array(N);
+    for (var i = 0; i < N; i++) l.fy[i] = figmaY(l, i);
+  });
   function lineY(l, i) { return l.fy[i]; }
   D.lines.forEach(function (l) {
     var lo = Infinity, hi = -Infinity;
